@@ -1,5 +1,6 @@
 import os
 import json
+from pathlib import Path
 from pypdf import PdfReader
 from wand.image import Image
 import argparse
@@ -10,18 +11,15 @@ def load_processed_records(record_path):
             return json.load(record_file)
     return {}
 
-def save_processed_record(record_path, processed_files):
-    with open(record_path, 'w') as record_file:
-        json.dump(processed_files, record_file, indent=2)
-
-def is_directory_processed(records, directory):
-    for record in records:
-        if 'directory' in record and record.get("directory") == directory:
+def is_path_processed(records, filefolder, filename):
+    if filefolder in records.keys():
+        # extract the list of titles from records[filefolder]
+        titles = [record['file_name'] for record in records[filefolder]]
+        if filename in titles:
             return True
+        else:
+            return False        
     return False
-
-def mark_file_as_processed(record, file_path):
-    record[file_path] = {'metadata': True, 'thumbnail': True}
 
 def extract_metadata(pdf_path, parent_path, noTitleCount):
     print(f'Processing {pdf_path}...')
@@ -37,12 +35,12 @@ def extract_metadata(pdf_path, parent_path, noTitleCount):
             title = os.path.basename(pdf_path)
         metadata = {
             'title': title,
+            'file_name': os.path.basename(pdf_path),
             'author': pdf_document.metadata.author,
             'subject': pdf_document.metadata.subject,
             'creator': pdf_document.metadata.creator,
             'producer': pdf_document.metadata.producer,
             'size': os.path.getsize(pdf_path),
-            'directory': pdf_path,
             'thumbnail_path': generate_thumbnail(pdf_path, parent_path)
         }
         return metadata, noTitleCount
@@ -59,14 +57,14 @@ def generate_thumbnail(pdf_path, parent_path, page_number=0, thumbnail_size=(595
         images_folder = os.path.join(parent_path, 'images')
         os.makedirs(images_folder, exist_ok=True)
 
-        thumbnail_path = os.path.join(images_folder, os.path.basename(pdf_path) + '_thumbnail.png')
+        pdf_without_extension = Path(os.path.basename(pdf_path)).stem
+        thumbnail_path = os.path.join(images_folder, pdf_without_extension + '_thumbnail.png')
         img.save(filename=thumbnail_path)
-        return thumbnail_path
+        return pdf_without_extension + '_thumbnail.png'
     
 def load_metadata_list(processed_records):
-    metadata_list = []
-    for record in processed_records:
-        metadata_list.append(record)
+    metadata_list = processed_records
+
     return metadata_list
 
 def process_folder(folder_path):
@@ -80,17 +78,21 @@ def process_folder(folder_path):
         for file in files:
             if file.lower().endswith('.pdf'):
                 file_path = os.path.join(root, file)
+                file_folder = root
                 
-                # Extract directory from the file path
-                file_directory = os.path.dirname(file_path)
-
                 # Check if the file has already been processed
-                if is_directory_processed(processed_records, file_path):
+                if is_path_processed(processed_records, file_folder, file):
                     print(f'Skipping {file_path} - Already processed.')
                     continue
-
+                
                 metadata, noTitleCount = extract_metadata(file_path, folder_path, noTitleCount)
-                metadata_list.append(metadata)
+
+                # chcek if metadata_values disctionary has a file_path key, if so, update the metadata_list, else add a new entry                
+                if file_folder in metadata_list.keys():
+                    metadata_list[file_folder].append(metadata)
+                else:
+                    metadata_list[file_folder] = [metadata]
+
 
     print(f'{noTitleCount} out of {len(metadata_list)} files had no title metadata.')
     return metadata_list
