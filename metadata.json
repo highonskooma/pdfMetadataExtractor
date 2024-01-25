@@ -1,113 +1,122 @@
-[
-  {
-    "title": "Malta_Hypogeum_Archaeoacoustics.pdf",
-    "author": "Odracir",
-    "subject": "",
-    "creator": "WPS Writer",
-    "producer": "",
-    "size": 80950,
-    "directory": "test",
-    "thumbnail_path": "test/images/Malta_Hypogeum_Archaeoacoustics.pdf_thumbnail.png"
-  },
-  {
-    "title": "Archaeoacoustic_research_in_the_ancient-1.pdf",
-    "author": "",
-    "subject": "",
-    "creator": "",
-    "producer": "GPL Ghostscript 9.10",
-    "size": 1186690,
-    "directory": "test",
-    "thumbnail_path": "test/images/Archaeoacoustic_research_in_the_ancient-1.pdf_thumbnail.png"
-  },
-  {
-    "title": "Archaeoacoustic_research_in_the_ancient-2.pdf",
-    "author": "",
-    "subject": "",
-    "creator": "",
-    "producer": "GPL Ghostscript 9.10",
-    "size": 1186690,
-    "directory": "test",
-    "thumbnail_path": "test/images/Archaeoacoustic_research_in_the_ancient-2.pdf_thumbnail.png"
-  },
-  {
-    "title": "Archaeoacoustic_research_in_the_ancient.pdf",
-    "author": "",
-    "subject": "",
-    "creator": "",
-    "producer": "GPL Ghostscript 9.10",
-    "size": 1186690,
-    "directory": "test",
-    "thumbnail_path": "test/images/Archaeoacoustic_research_in_the_ancient.pdf_thumbnail.png"
-  },
-  {
-    "title": "An_archaeoacoustic_study_of_the_al_Saflieni_Hypogeum.pdf",
-    "author": "",
-    "subject": "",
-    "creator": "LaTeX with hyperref package",
-    "producer": "University of Colorado, Boulder",
-    "size": 1142006,
-    "directory": "test",
-    "thumbnail_path": "test/images/An_archaeoacoustic_study_of_the_al_Saflieni_Hypogeum.pdf_thumbnail.png"
-  },
-  {
-    "title": "Archaeoacoustic_Analysis_of_Tarxien_Temp-1.pdf",
-    "author": "",
-    "subject": "",
-    "creator": "",
-    "producer": "GPL Ghostscript 9.10",
-    "size": 1402672,
-    "directory": "test/6th space- Tarxien",
-    "thumbnail_path": "test/images/Archaeoacoustic_Analysis_of_Tarxien_Temp-1.pdf_thumbnail.png"
-  },
-  {
-    "title": "BC.PDF",
-    "author": "Sanjay Amin",
-    "subject": null,
-    "creator": "Microsoft Word ",
-    "producer": "Acrobat PDFWriter 4.05 for Windows",
-    "size": 107924,
-    "directory": "test/test",
-    "thumbnail_path": "test/images/History_Ancient_-_Greek_Culture_To_500_Bc.pdf_thumbnail.png"
-  },
-  {
-    "title": "PDF Metadata Sample",
-    "author": "Nigel Maddocks",
-    "subject": "Test Document",
-    "creator": "Acrobat PDFMaker 15 for Word",
-    "producer": "Adobe PDF Library 15.0",
-    "size": 37545,
-    "directory": "test/test",
-    "thumbnail_path": "test/images/meta.pdf_thumbnail.png"
-  },
-  {
-    "title": "dummy.pdf",
-    "author": "Evangelos Vlachogiannis",
-    "subject": null,
-    "creator": "Writer",
-    "producer": "OpenOffice.org 2.1",
-    "size": 13264,
-    "directory": "test/test",
-    "thumbnail_path": "test/images/dummy.pdf_thumbnail.png"
-  },
-  {},
-  {
-    "title": "sample.pdf",
-    "author": null,
-    "subject": null,
-    "creator": "Rave (http://www.nevrona.com/rave)",
-    "producer": "Nevrona Designs",
-    "size": 3028,
-    "directory": "test/test",
-    "thumbnail_path": "test/images/sample.pdf_thumbnail.png"
-  },
-  {
-    "title": "ARCHAEOACOUSTIC_ANALYSIS_OF_THE_ANCIENT_1.pdf",
-    "author": "",
-    "subject": "",
-    "creator": "",
-    "producer": "GPL Ghostscript 9.10",
-    "size": 1473330,
-    "directory": "test/5th space- Alatri",
-    "thumbnail_path": "test/images/ARCHAEOACOUSTIC_ANALYSIS_OF_THE_ANCIENT_1.pdf_thumbnail.png"
-  }
-]
+{
+  "C:\\Repos\\pdfMetadataExtractor\\test": [
+    {
+      "title": "dummy.pdf",
+      "file_name": "dummy.pdf",
+      "author": "Evangelos Vlachogiannis",
+      "subject": null,
+      "creator": "Writer",
+      "producer": "OpenOffice.org 2.1",
+      "size": 13264,
+      "thumbnail_path": "dummy_thumbnail.png"
+    },
+    {
+      "title": "BC.PDF",
+      "file_name": "History_Ancient_-_Greek_Culture_To_500_Bc.pdf",
+      "author": "Sanjay Amin",
+      "subject": null,
+      "creator": "Microsoft Word ",
+      "producer": "Acrobat PDFWriter 4.05 for Windows",
+      "size": 107924,
+      "thumbnail_path": "History_Ancient_-_Greek_Culture_To_500_Bc_thumbnail.png"
+    },
+    {
+      "title": "PDF Metadata Sample",
+      "file_name": "meta.pdf",
+      "author": "Nigel Maddocks",
+      "subject": "Test Document",
+      "creator": "Acrobat PDFMaker 15 for Word",
+      "producer": "Adobe PDF Library 15.0",
+      "size": 37545,
+      "thumbnail_path": "meta_thumbnail.png"
+    },
+    {
+      "title": "sample.pdf",
+      "file_name": "sample.pdf",
+      "author": null,
+      "subject": null,
+      "creator": "Rave (http://www.nevrona.com/rave)",
+      "producer": "Nevrona Designs",
+      "size": 3028,
+      "thumbnail_path": "sample_thumbnail.png"
+    }
+  ],
+  "C:\\Repos\\pdfMetadataExtractor\\test\\institute": [
+    {
+      "title": "An_archaeoacoustic_study_of_the_al_Saflieni_Hypogeum.pdf",
+      "file_name": "An_archaeoacoustic_study_of_the_al_Saflieni_Hypogeum.pdf",
+      "author": "",
+      "subject": "",
+      "creator": "LaTeX with hyperref package",
+      "producer": "University of Colorado, Boulder",
+      "size": 1142006,
+      "thumbnail_path": "An_archaeoacoustic_study_of_the_al_Saflieni_Hypogeum_thumbnail.png"
+    },
+    {
+      "title": "Archaeoacoustic_research_in_the_ancient-1.pdf",
+      "file_name": "Archaeoacoustic_research_in_the_ancient-1.pdf",
+      "author": "",
+      "subject": "",
+      "creator": "",
+      "producer": "GPL Ghostscript 9.10",
+      "size": 1186690,
+      "thumbnail_path": "Archaeoacoustic_research_in_the_ancient-1_thumbnail.png"
+    },
+    {
+      "title": "Archaeoacoustic_research_in_the_ancient.pdf",
+      "file_name": "Archaeoacoustic_research_in_the_ancient.pdf",
+      "author": "",
+      "subject": "",
+      "creator": "",
+      "producer": "GPL Ghostscript 9.10",
+      "size": 1186690,
+      "thumbnail_path": "Archaeoacoustic_research_in_the_ancient_thumbnail.png"
+    }
+  ],
+  "C:\\Repos\\pdfMetadataExtractor\\test\\institute\\5th space- Alatri": [
+    {
+      "title": "ARCHAEOACOUSTIC_ANALYSIS_OF_THE_ANCIENT_1.pdf",
+      "file_name": "ARCHAEOACOUSTIC_ANALYSIS_OF_THE_ANCIENT_1.pdf",
+      "author": "",
+      "subject": "",
+      "creator": "",
+      "producer": "GPL Ghostscript 9.10",
+      "size": 1473330,
+      "thumbnail_path": "ARCHAEOACOUSTIC_ANALYSIS_OF_THE_ANCIENT_1_thumbnail.png"
+    }
+  ],
+  "C:\\Repos\\pdfMetadataExtractor\\test\\institute\\6th space- Tarxien": [
+    {
+      "title": "Archaeoacoustic_Analysis_of_Tarxien_Temp-1.pdf",
+      "file_name": "Archaeoacoustic_Analysis_of_Tarxien_Temp-1.pdf",
+      "author": "",
+      "subject": "",
+      "creator": "",
+      "producer": "GPL Ghostscript 9.10",
+      "size": 1402672,
+      "thumbnail_path": "Archaeoacoustic_Analysis_of_Tarxien_Temp-1_thumbnail.png"
+    }
+  ],
+  "C:\\Repos\\pdfMetadataExtractor\\test\\institute\\subfolder": [
+    {
+      "title": "Archaeoacoustic_research_in_the_ancient-2.pdf",
+      "file_name": "Archaeoacoustic_research_in_the_ancient-2.pdf",
+      "author": "",
+      "subject": "",
+      "creator": "",
+      "producer": "GPL Ghostscript 9.10",
+      "size": 1186690,
+      "thumbnail_path": "Archaeoacoustic_research_in_the_ancient-2_thumbnail.png"
+    },
+    {
+      "title": "Malta_Hypogeum_Archaeoacoustics.pdf",
+      "file_name": "Malta_Hypogeum_Archaeoacoustics.pdf",
+      "author": "Odracir",
+      "subject": "",
+      "creator": "WPS Writer",
+      "producer": "",
+      "size": 80950,
+      "thumbnail_path": "Malta_Hypogeum_Archaeoacoustics_thumbnail.png"
+    }
+  ]
+}
