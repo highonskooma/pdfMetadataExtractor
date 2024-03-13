@@ -75,6 +75,7 @@ def process_folder(folder_path):
     metadata_list = load_metadata_list(processed_records)
     noTitleCount = 0
     for root, dirs, files in os.walk(folder_path):
+        dirName = os.path.basename(root)
         for file in files:
             if file.lower().endswith('.pdf'):
                 file_path = os.path.join(root, file)
@@ -88,10 +89,10 @@ def process_folder(folder_path):
                 metadata, noTitleCount = extract_metadata(file_path, folder_path, noTitleCount)
 
                 # chcek if metadata_values disctionary has a file_path key, if so, update the metadata_list, else add a new entry                
-                if file_folder in metadata_list.keys():
-                    metadata_list[file_folder].append(metadata)
+                if dirName in metadata_list.keys():
+                    metadata_list[dirName].append(metadata)
                 else:
-                    metadata_list[file_folder] = [metadata]
+                    metadata_list[dirName] = [metadata]
 
 
     print(f'{noTitleCount} out of {len(metadata_list)} files had no title metadata.')
