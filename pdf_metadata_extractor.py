@@ -22,12 +22,12 @@ def is_path_processed(records, filefolder, filename):
     return False
 
 def extract_metadata(pdf_path, parent_path, noTitleCount):
-    print(f'Processing {pdf_path}...')
+    # print(f'Processing {pdf_path}...')
         
     try:
         pdf_document = PdfReader(pdf_path)
         if pdf_document.metadata is None:
-            print(f'No metadata found for {pdf_path}')
+            # print(f'No metadata found for {pdf_path}')
             return {}, noTitleCount
         title = pdf_document.metadata.title 
         if not title:
@@ -35,7 +35,7 @@ def extract_metadata(pdf_path, parent_path, noTitleCount):
             title = os.path.basename(pdf_path)
         metadata = {
             'title': title,
-            'file_name': os.path.basename(pdf_path),
+            'file_name': os.path.splitext(os.path.basename(pdf_path))[0],
             'author': pdf_document.metadata.author,
             'subject': pdf_document.metadata.subject,
             'creator': pdf_document.metadata.creator,
@@ -46,7 +46,7 @@ def extract_metadata(pdf_path, parent_path, noTitleCount):
         return metadata, noTitleCount
 
     except Exception as e:
-        print(f'Error processing {pdf_path}: {str(e)}')
+        # print(f'Error processing {pdf_path}: {str(e)}')
         return {}, noTitleCount
     
 def generate_thumbnail(pdf_path, parent_path, page_number=0, thumbnail_size=(595, 842)):
@@ -76,6 +76,9 @@ def process_folder(folder_path):
     noTitleCount = 0
     for root, dirs, files in os.walk(folder_path):
         dirName = os.path.basename(root)
+        print('Scanning for files in', dirName)
+        if not files:
+            metadata_list[dirName] = []
         for file in files:
             if file.lower().endswith('.pdf'):
                 file_path = os.path.join(root, file)
@@ -83,7 +86,7 @@ def process_folder(folder_path):
                 
                 # Check if the file has already been processed
                 if is_path_processed(processed_records, file_folder, file):
-                    print(f'Skipping {file_path} - Already processed.')
+                    # print(f'Skipping {file_path} - Already processed.')
                     continue
                 
                 metadata, noTitleCount = extract_metadata(file_path, folder_path, noTitleCount)
@@ -94,8 +97,7 @@ def process_folder(folder_path):
                 else:
                     metadata_list[dirName] = [metadata]
 
-
-    print(f'{noTitleCount} out of {len(metadata_list)} files had no title metadata.')
+    # print(f'{noTitleCount} out of {len(metadata_list)} files had no title metadata.')
     return metadata_list
 
 def save_to_json(metadata_list, output_json):
