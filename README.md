@@ -1,6 +1,6 @@
 # pdfMetadataExtractor
 
- A python script for windows that extracts pdf metadata from any pdf in a subfolder.\
+ A python script that recursively extracts pdf metadata from any pdf in a subfolder.\
  It also extracts thumbnails from each file and stores them in an images folder
 
 ## Requirements
@@ -12,7 +12,9 @@ This will create the pdf thumbnails
 
 ## Setup
 
-Run `pip install` to install project dependencies (pathlib, pypdf, wand, argparse).
+Run `pip install` to install project dependencies (pypdf, wand, argparse).
+
+or if you're on Arch there are AUR packages for each one of these.
 
 ## Usage
 
